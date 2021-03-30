@@ -142,6 +142,7 @@ main {
 }
 .content > article:hover {
   cursor: pointer;
+  filter: grayscale(90%);
   transition: all 0.4s;
 }
 .post {
