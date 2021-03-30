@@ -278,6 +278,42 @@ footer > section > article p {
     flex-direction: column-reverse;
     align-items: center;
   }
+  /* main {
+    flex-direction: column;
+  } */
+  .content {
+    margin-right: 10px;
+  }
+  .content > article,
+  .content > article:nth-child(even) {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .content > article:nth-child(even) > .post {
+    flex-direction: row;
+  }
+  .content > article > img {
+    max-width: 100%;
+  }
+  .post-date > h2,
+  .post-text > h2 {
+    font-size: 22px;
+  }
+  .post-text > p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .post-date > p {
+    font-size: 16px;
+  }
+}
+
+/* mobile */
+@media only screen and (max-width: 645px) {
+  header > section {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
   main {
     flex-direction: column;
   }
