@@ -278,9 +278,7 @@ footer > section > article p {
     flex-direction: column-reverse;
     align-items: center;
   }
-  /* main {
-    flex-direction: column;
-  } */
+
   .content {
     margin-right: 10px;
   }
