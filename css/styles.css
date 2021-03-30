@@ -138,15 +138,12 @@ main {
 }
 .content > article {
   display: flex;
-  transition: all 0.4s;
+  position: relative;
 }
-.content > article:hover {
-  cursor: pointer;
-  filter: grayscale(90%);
-  transition: all 0.4s;
-}
+
 .post {
   display: flex;
+  padding: 30px;
 }
 .content > article:nth-child(even) {
   flex-direction: row-reverse;
@@ -174,25 +171,90 @@ main {
 }
 .post-text > p {
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 .post-date > p {
   font-size: 24px;
 }
-
+/* ставим фон для тексту але на весь артікл */
 .post-1 {
   background: #f3d250;
 }
+/* ставим псевдо біфор і розтягуєм на весь наш артікл і ховаємо зет індексом -1 */
+.post-1::before {
+  content: "";
+  background: #f3d250;
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  opacity: 50%;
+}
+/* при наведені збільшуєм зет індекс і трошки транзішена */
+.post-1:hover::before {
+  cursor: pointer;
+  z-index: 2;
+  width: 100%;
+  transition: all 0.5s linear 0s;
+}
+
 .post-2 {
   background: #8d8741;
 }
+
+.post-2::before {
+  content: "";
+  background: #8d8741;
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  opacity: 50%;
+}
+.post-2:hover::before {
+  cursor: pointer;
+  z-index: 2;
+  width: 100%;
+  transition: all 0.5s linear 0s;
+}
 .post-3 {
   background: #659dbd;
+}
+
+.post-3::before {
+  content: "";
+  background: #659dbd;
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  opacity: 50%;
+}
+.post-3:hover::before {
+  cursor: pointer;
+  z-index: 2;
+  width: 100%;
+  transition: all 0.5s linear 0s;
 }
 .post-4 {
   background: #daad86;
 }
 
+.post-4::before {
+  content: "";
+  background: #daad86;
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  opacity: 50%;
+}
+.post-4:hover::before {
+  cursor: pointer;
+  z-index: 2;
+  width: 100%;
+  transition: all 0.5s linear 0s;
+}
 .bg-img-post {
   display: flex;
   flex-direction: column;
@@ -239,10 +301,12 @@ main {
   align-self: start;
   font-size: 12px;
   padding: 5px;
+  transition: all 0.4s;
 }
 .news > article > .button:hover {
-  border: none;
-  border-bottom: solid #000 2px;
+  border: solid 1px transparent;
+  border-bottom: solid #000 1px;
+  transition: all 0.4s;
 }
 footer {
   background: #162b4d;
